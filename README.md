@@ -6,7 +6,7 @@
 
 * **Tailwind CSS v4**
 * **HTML5 / CSS3**
-* **PostCSS / CLI**
+* **Tailwind CLI**
 
 ---
 
