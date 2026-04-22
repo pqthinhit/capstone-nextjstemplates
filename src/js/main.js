@@ -22,7 +22,7 @@ function initTestimonialsSlider() {
     if (typeof $ !== 'undefined' && $.fn.slick) {
         $('#testimonialsSlider').slick({
             dots: true,
-            infinite: true,
+            infinite: false,
             autoplay: true,
             autoplaySpeed: 2000,
             speed: 500,
@@ -56,8 +56,28 @@ function initScrollTop() {
     });
 }
 
+// Scroll Animation (IntersectionObserver)
+function initScrollAnimations() {
+    const animElements = document.querySelectorAll('.anim-fade-left, .anim-fade-right, .anim-fade-top');
+    if (!animElements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('anim-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    animElements.forEach(el => observer.observe(el));
+}
+
 // Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
     initTestimonialsSlider();
     initScrollTop();
+    initScrollAnimations();
 });
