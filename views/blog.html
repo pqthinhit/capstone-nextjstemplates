@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next.js Starter Template for SaaS</title>
+    <link rel="shortcut icon" href="../public/logo/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../src/css/output.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+    <header id="main-header" class="fixed left-0 top-0 z-[999] w-full py-7 transition-all duration-300 bg-transparent">
+        <nav class="relative mx-auto max-w-[1390px] w-full items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+
+            <div class="flex w-full items-center justify-between xl:w-1/4">
+                <a href="/">
+                    <img alt="logo" loading="lazy" width="119" height="30" class="hidden dark:block"
+                        src="../public/logo/logo-dark.svg">
+                    <img alt="logo" loading="lazy" width="119" height="30" class="block dark:hidden"
+                        src="../public/logo/logo-light.svg">
+                </a>
+
+                <button type="button"
+                    class="block xl:hidden hs-collapse-toggle relative size-9 flex justify-center items-center rounded-lg text-black dark:text-white"
+                    id="navbar-collapse-btn" aria-expanded="false" aria-controls="navbar-collapse-menu"
+                    aria-label="Toggle navigation" data-hs-collapse="#navbar-collapse-menu">
+                    <svg class="hs-collapse-open:hidden size-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" x2="21" y1="6" y2="6" />
+                        <line x1="3" x2="21" y1="12" y2="12" />
+                        <line x1="3" x2="21" y1="18" y2="18" />
+                    </svg>
+                    <svg class="hs-collapse-open:block hidden size-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="navbar-collapse-menu"
+                class="hidden hs-collapse overflow-hidden transition-all duration-300 w-full basis-full grow xl:block"
+                aria-labelledby="navbar-collapse-btn">
+                <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between w-full">
+
+                    <ul class="flex flex-col gap-5 mt-7 xl:mt-0 xl:flex-row xl:items-center xl:gap-10">
+                        <li><a class="text-[#006BFF] hover:text-[#006BFF]" href="../src/index.html">Home</a></li>
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="../src/index.html#features">Features</a></li>
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="./blog.html">Blog</a></li>
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="./doc.html">Docs</a></li>
+
+                        <li
+                            class="group hs-dropdown [--strategy:static] xl:[--strategy:absolute] [--adaptive:none] xl:[--trigger:hover] py-3 xl:py-0">
+                            <button type="button"
+                                class="hs-dropdown-toggle flex cursor-pointer w-full items-center justify-between gap-3 text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300">
+                                Pages
+                                <svg class="h-3 w-3 fill-current transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path
+                                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                                    </path>
+                                </svg>
+                            </button>
+
+                            <ul
+                                class="hs-dropdown-menu transition-all duration-500 translate-y-8 hs-dropdown-open:translate-y-4 hs-dropdown-open:opacity-100 opacity-0 hidden z-10 bg-white rounded-lg py-3 px-4 xl:w-48 xl:mt-3 relative drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:bg-neutral-800 dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] xl:before:absolute xl:before:-top-1.5 xl:before:left-6 xl:before:size-3 xl:before:bg-white dark:xl:before:bg-neutral-800 xl:before:rotate-45 xl:before:rounded-sm">
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Blog Grid</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Sign In</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Sign Up</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Docs</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Support</a></li>
+                                <li><a class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">404</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="./support.html">Support</a></li>
+                    </ul>
+
+                    <div class="mt-7 flex items-center gap-6 xl:mt-0 xl:ml-auto">
+
+                        <button
+                            class="hidden h-[38px] w-[38px] items-center justify-center rounded-full bg-transparent text-[#757693] dark:text-gray-300 sm:flex cursor-pointer transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 18 18" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.9347 15.3963L12.4816 11.7799C14.3168 9.26991 14.1279 5.68042 11.8338 3.41337C10.6194 2.19889 9.00003 1.52417 7.27276 1.52417C5.54549 1.52417 3.92617 2.19889 2.71168 3.41337C0.201738 5.92332 0.201738 10.0256 2.71168 12.5355C3.92617 13.75 5.54549 14.4247 7.27276 14.4247C8.91907 14.4247 10.4574 13.804 11.6719 12.6975L16.179 16.3409C16.287 16.4219 16.4219 16.4759 16.5569 16.4759C16.7458 16.4759 16.9077 16.3949 17.0157 16.26C17.2316 15.9901 17.2046 15.6122 16.9347 15.3963ZM7.27276 13.2102C5.86935 13.2102 4.5739 12.6705 3.57532 11.6719C1.52418 9.62076 1.52418 6.30116 3.57532 4.27701C4.5739 3.27843 5.86935 2.73866 7.27276 2.73866C8.67617 2.73866 9.97162 3.27843 10.9702 4.27701C13.0213 6.32815 13.0213 9.64775 10.9702 11.6719C9.99861 12.6705 8.67617 13.2102 7.27276 13.2102Z">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <button aria-label="theme toggler"
+                            class="absolute right-[68px] xl:static flex cursor-pointer items-center justify-center rounded-full bg-transparent p-[9px] text-black dark:text-white">
+                            <img alt="moon" loading="lazy" width="21" height="21" class="dark:hidden"
+                                src="../public/icon/icon-moon.svg">
+                            <img alt="sun" loading="lazy" width="22" height="22" class="hidden dark:block"
+                                src="../public/icon/icon-sun.svg">
+                        </button>
+
+                        <a class="text-[16px] font-medium text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                            href="#">Sign In</a>
+                        <a class="flex items-center justify-center rounded-full bg-[#006BFF] px-[30px] py-[10px] text-[16px] text-white duration-300 ease-in-out hover:bg-[#005CE6]"
+                            href="#">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="mx-auto mt-[60px] max-w-[1280px] px-4 md:px-8 xl:mt-[80px] xl:px-0">
+
+            <div class="grid grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3 xl:gap-[40px]">
+
+                <div class="animate_top group rounded-lg bg-white p-4 pb-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:border dark:border-neutral-800 dark:bg-[#1C2136]"
+                    style="animation-delay: 0.1s;">
+                    <a class="relative block aspect-[368/239] overflow-hidden rounded-lg"
+                        href="/blog/exploring-the-mern-stack">
+                        <img alt="Exploring MERN Stack" loading="lazy"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            src="https://cdn.sanity.io/images/nq6dnm34/production/9e6b67ab379a182243ac521db056e96918ff1b5d-1000x667.png">
+                    </a>
+                    <div class="px-4">
+                        <h3
+                            class="mb-[14px] mt-[30px] line-clamp-2 text-lg font-medium text-black transition-colors hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] xl:text-[22px] leading-snug">
+                            <a href="/blog/exploring-the-mern-stack">Exploring MERN Stack: Powering Modern Web
+                                Development</a>
+                        </h3>
+                        <p class="line-clamp-3 text-[#757693] dark:text-gray-400">
+                            In the world of web development, staying ahead of the curve is crucial. One technology stack
+                            that ha
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate_top group rounded-lg bg-white p-4 pb-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:border dark:border-neutral-800 dark:bg-[#1C2136]"
+                    style="animation-delay: 0.2s;">
+                    <a class="relative block aspect-[368/239] overflow-hidden rounded-lg"
+                        href="/blog/best-ui-components">
+                        <img alt="Best UI components" loading="lazy"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            src="https://cdn.sanity.io/images/nq6dnm34/production/b34fca863dc4efa821da4e71328ec9718ab14062-970x440.png">
+                    </a>
+                    <div class="px-4">
+                        <h3
+                            class="mb-[14px] mt-[30px] line-clamp-2 text-lg font-medium text-black transition-colors hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] xl:text-[22px] leading-snug">
+                            <a href="/blog/best-ui-components">Best UI components for modern website...</a>
+                        </h3>
+                        <p class="line-clamp-3 text-[#757693] dark:text-gray-400">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate_top group rounded-lg bg-white p-4 pb-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:border dark:border-neutral-800 dark:bg-[#1C2136]"
+                    style="animation-delay: 0.3s;">
+                    <a class="relative block aspect-[368/239] overflow-hidden rounded-lg"
+                        href="/blog/the-power-of-uiux">
+                        <img alt="The Power of UI/UX" loading="lazy"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            src="https://cdn.sanity.io/images/nq6dnm34/production/f492eebba9742b0c8c71dd541bd123cdd4fe2130-970x440.png">
+                    </a>
+                    <div class="px-4">
+                        <h3
+                            class="mb-[14px] mt-[30px] line-clamp-2 text-lg font-medium text-black transition-colors hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] xl:text-[22px] leading-snug">
+                            <a href="/blog/the-power-of-uiux">The Power of UI/UX: Elevating Digital Experiences</a>
+                        </h3>
+                        <p class="line-clamp-3 text-[#757693] dark:text-gray-400">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet
+                            dolor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate_top group rounded-lg bg-white p-4 pb-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:border dark:border-neutral-800 dark:bg-[#1C2136]"
+                    style="animation-delay: 0.4s;">
+                    <a class="relative block aspect-[368/239] overflow-hidden rounded-lg"
+                        href="/blog/tips-improve-coding-speed">
+                        <img alt="Improve coding speed" loading="lazy"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            src="https://cdn.sanity.io/images/nq6dnm34/production/b8b5e1f033a65f0194303d8a55ae400c50d27d1a-740x340.png">
+                    </a>
+                    <div class="px-4">
+                        <h3
+                            class="mb-[14px] mt-[30px] line-clamp-2 text-lg font-medium text-black transition-colors hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] xl:text-[22px] leading-snug">
+                            <a href="/blog/tips-improve-coding-speed">Tips to quickly improve your coding speed in
+                                2025...</a>
+                        </h3>
+                        <p class="line-clamp-3 text-[#757693] dark:text-gray-400">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate_top group rounded-lg bg-white p-4 pb-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:border dark:border-neutral-800 dark:bg-[#1C2136]"
+                    style="animation-delay: 0.5s;">
+                    <a class="relative block aspect-[368/239] overflow-hidden rounded-lg"
+                        href="/blog/mern-stack-go-to-choice">
+                        <img alt="MERN stack choice" loading="lazy"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            src="https://cdn.sanity.io/images/nq6dnm34/production/2f34d4baaa4ddb04129da8fbb9d075533b927337-970x440.png">
+                    </a>
+                    <div class="px-4">
+                        <h3
+                            class="mb-[14px] mt-[30px] line-clamp-2 text-lg font-medium text-black transition-colors hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] xl:text-[22px] leading-snug">
+                            <a href="/blog/mern-stack-go-to-choice">The MERN stack has become a go-to choice...</a>
+                        </h3>
+                        <p class="line-clamp-3 text-[#757693] dark:text-gray-400">
+                            In the world of web development, staying ahead of the curve is crucial. One technology stack
+                            that ha
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate_top group rounded-lg bg-white p-4 pb-[36px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:border dark:border-neutral-800 dark:bg-[#1C2136]"
+                    style="animation-delay: 0.6s;">
+                    <a class="relative block aspect-[368/239] overflow-hidden rounded-lg"
+                        href="/blog/rise-of-saas-startups">
+                        <img alt="Rise of SaaS Startups" loading="lazy"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            src="https://cdn.sanity.io/images/nq6dnm34/production/b5808ab893fc3d0c37ccfc596dcbae26ceb7d139-970x440.png">
+                    </a>
+                    <div class="px-4">
+                        <h3
+                            class="mb-[14px] mt-[30px] line-clamp-2 text-lg font-medium text-black transition-colors hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] xl:text-[22px] leading-snug">
+                            <a href="/blog/rise-of-saas-startups">The Rise of SaaS Startups: Revolutionizing
+                                Business...</a>
+                        </h3>
+                        <p class="line-clamp-3 text-[#757693] dark:text-gray-400">
+                            In today's digital age, startups are constantly pushing the boundaries of innovation,
+                            transforming t
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="../src/js/preline.js"></script>
+    <script src="../src/js/main.js"></script>
+</body>
+
+</html>
