@@ -4,574 +4,779 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next.js Starter Template for SaaS</title>
+    <title>Clone Next.js Starter Template for SaaS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
 
 <body>
-    <!-- Header -->
-    <div>
-        <header
-            class="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full py-3 bg-white dark:bg-neutral-800 border-b border-gray-200 dark:border-neutral-700">
-            <nav class="max-w-340 w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
-                <div class="flex items-center justify-between">
-                    <a class="flex-none text-xl font-semibold text-gray-800 dark:text-neutral-200 focus:outline-hidden focus:opacity-80"
-                        href="#" aria-label="Brand">
-                        <img class="w-10 h-auto" src="../public/logo/logo-light.svg" alt="Logo">
-                    </a>
-                    <div class="sm:hidden">
-                        <button type="button"
-                            class="hs-collapse-toggle relative size-9 flex justify-center items-center gap-x-2 rounded-lg bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 text-gray-800 dark:text-white shadow-2xs hover:bg-gray-50 dark:hover:bg-neutral-700 focus:outline-hidden focus:bg-gray-50 dark:focus:bg-neutral-700 disabled:opacity-50 disabled:pointer-events-none"
-                            id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example"
-                            aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
-                            <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="3" x2="21" y1="6" y2="6" />
-                                <line x1="3" x2="21" y1="12" y2="12" />
-                                <line x1="3" x2="21" y1="18" y2="18" />
+    <header id="main-header" class="fixed left-0 top-0 z-[999] w-full py-7 transition-all duration-300 bg-transparent">
+        <nav class="relative mx-auto max-w-[1390px] w-full items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+
+            <div class="flex w-full items-center justify-between xl:w-1/4">
+                <a href="/">
+                    <img alt="logo" loading="lazy" width="119" height="30" class="hidden dark:block"
+                        src="../public/logo/logo-dark.svg">
+                    <img alt="logo" loading="lazy" width="119" height="30" class="block dark:hidden"
+                        src="../public/logo/logo-light.svg">
+                </a>
+
+                <button type="button"
+                    class="block xl:hidden hs-collapse-toggle relative size-9 flex justify-center items-center rounded-lg text-black dark:text-white"
+                    id="navbar-collapse-btn" aria-expanded="false" aria-controls="navbar-collapse-menu"
+                    aria-label="Toggle navigation" data-hs-collapse="#navbar-collapse-menu">
+                    <svg class="hs-collapse-open:hidden size-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" x2="21" y1="6" y2="6" />
+                        <line x1="3" x2="21" y1="12" y2="12" />
+                        <line x1="3" x2="21" y1="18" y2="18" />
+                    </svg>
+                    <svg class="hs-collapse-open:block hidden size-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="navbar-collapse-menu"
+                class="hidden hs-collapse overflow-hidden transition-all duration-300 w-full basis-full grow xl:block"
+                aria-labelledby="navbar-collapse-btn">
+                <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between w-full">
+
+                    <ul class="flex flex-col gap-5 mt-7 xl:mt-0 xl:flex-row xl:items-center xl:gap-10">
+                        <li><a class="text-[#006BFF] hover:text-[#006BFF]" href="#">Home</a></li>
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="#features">Features</a></li>
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="#blog">Blog</a></li>
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="#docs">Docs</a></li>
+
+                        <li
+                            class="group hs-dropdown [--strategy:static] xl:[--strategy:absolute] [--adaptive:none] xl:[--trigger:hover] py-3 xl:py-0">
+                            <button type="button"
+                                class="hs-dropdown-toggle flex cursor-pointer w-full items-center justify-between gap-3 text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300">
+                                Pages
+                                <svg class="h-3 w-3 fill-current transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path
+                                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                                    </path>
+                                </svg>
+                            </button>
+
+                            <ul
+                                class="hs-dropdown-menu transition-all duration-500 translate-y-8 hs-dropdown-open:translate-y-4 hs-dropdown-open:opacity-100 opacity-0 hidden z-10 bg-white rounded-lg py-3 px-4 xl:w-48 xl:mt-3 relative drop-shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:bg-neutral-800 dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] xl:before:absolute xl:before:-top-1.5 xl:before:left-6 xl:before:size-3 xl:before:bg-white dark:xl:before:bg-neutral-800 xl:before:rotate-45 xl:before:rounded-sm">
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Blog Grid</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Sign In</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Sign Up</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Docs</a></li>
+                                <li class="mb-2"><a
+                                        class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">Support</a></li>
+                                <li><a class="block text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                        href="#">404</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a class="text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                                href="#support">Support</a></li>
+                    </ul>
+
+                    <div class="mt-7 flex items-center gap-6 xl:mt-0 xl:ml-auto">
+
+                        <button
+                            class="hidden h-[38px] w-[38px] items-center justify-center rounded-full bg-transparent text-[#757693] dark:text-gray-300 sm:flex cursor-pointer transition-colors">
+                            <svg width="20" height="20" viewBox="0 0 18 18" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.9347 15.3963L12.4816 11.7799C14.3168 9.26991 14.1279 5.68042 11.8338 3.41337C10.6194 2.19889 9.00003 1.52417 7.27276 1.52417C5.54549 1.52417 3.92617 2.19889 2.71168 3.41337C0.201738 5.92332 0.201738 10.0256 2.71168 12.5355C3.92617 13.75 5.54549 14.4247 7.27276 14.4247C8.91907 14.4247 10.4574 13.804 11.6719 12.6975L16.179 16.3409C16.287 16.4219 16.4219 16.4759 16.5569 16.4759C16.7458 16.4759 16.9077 16.3949 17.0157 16.26C17.2316 15.9901 17.2046 15.6122 16.9347 15.3963ZM7.27276 13.2102C5.86935 13.2102 4.5739 12.6705 3.57532 11.6719C1.52418 9.62076 1.52418 6.30116 3.57532 4.27701C4.5739 3.27843 5.86935 2.73866 7.27276 2.73866C8.67617 2.73866 9.97162 3.27843 10.9702 4.27701C13.0213 6.32815 13.0213 9.64775 10.9702 11.6719C9.99861 12.6705 8.67617 13.2102 7.27276 13.2102Z">
+                                </path>
                             </svg>
-                            <svg class="hs-collapse-open:block hidden shrink-0 size-4"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M18 6 6 18" />
-                                <path d="m6 6 12 12" />
-                            </svg>
-                            <span class="sr-only">Toggle navigation</span>
                         </button>
+
+                        <button aria-label="theme toggler"
+                            class="absolute right-[68px] xl:static flex cursor-pointer items-center justify-center rounded-full bg-transparent p-[9px] text-black dark:text-white">
+                            <img alt="moon" loading="lazy" width="21" height="21" class="dark:hidden"
+                                src="../public/icon/icon-moon.svg">
+                            <img alt="sun" loading="lazy" width="22" height="22" class="hidden dark:block"
+                                src="../public/icon/icon-sun.svg">
+                        </button>
+
+                        <a class="text-[16px] font-medium text-[#757693] hover:text-[#006BFF] transition-colors dark:text-gray-300"
+                            href="#">Sign In</a>
+                        <a class="flex items-center justify-center rounded-full bg-[#006BFF] px-[30px] py-[10px] text-[16px] text-white duration-300 ease-in-out hover:bg-[#005CE6]"
+                            href="#">Sign Up</a>
                     </div>
                 </div>
-                <div id="hs-navbar-example"
-                    class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block"
-                    aria-labelledby="hs-navbar-example-collapse" role="region">
-                    <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-                        <a class="font-medium text-blue-700 dark:text-blue-600 focus:outline-hidden" href="#"
-                            aria-current="page">Landing</a>
-                        <a class="text-sm text-gray-800 dark:text-neutral-200 hover:text-blue-700 dark:hover:text-blue-600 focus:outline-hidden focus:text-blue-700 dark:focus:text-blue-600"
-                            href="#">Account</a>
-                        <a class="text-sm text-gray-800 dark:text-neutral-200 hover:text-blue-700 dark:hover:text-blue-600 focus:outline-hidden focus:text-blue-700 dark:focus:text-blue-600"
-                            href="#">Work</a>
-                        <a class="text-sm text-gray-800 dark:text-neutral-200 hover:text-blue-700 dark:hover:text-blue-600 focus:outline-hidden focus:text-blue-700 dark:focus:text-blue-600"
-                            href="#">Blog</a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
+            </div>
+        </nav>
+    </header>
+
+
 
     <!-- Carousel -->
-    <div></div>
+    <section
+        class="overflow-hidden pb-20 pt-[140px] md:pt-[160px] xl:pb-[100px] xl:pt-[184px] bg-white dark:bg-neutral-900 transition-colors duration-300">
+        <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-8 xl:gap-[130px]">
+
+                <div class="md:w-1/2">
+                    <h4 class="mb-[18px] text-lg font-medium text-black dark:text-white">
+                        🔥 Solid - A Complete SaaS Starter Template for SaaS
+                    </h4>
+
+                    <h1
+                        class="mb-5 pr-16 text-3xl font-bold text-black dark:text-white xl:text-[50px] xl:leading-[1.2]">
+                        Robust SaaS Boilerplate and Starter for
+                        <span
+                            class="relative z-10 ml-[10px] inline-block before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:z-[-1] before:h-3 before:w-full before:bg-[#adfff8] dark:before:bg-[#1c2136]">
+                            Next.js
+                        </span>
+                    </h1>
+
+                    <p class="text-[#757693] dark:text-gray-300">
+                        Packed with all the key integrations you need for swift SaaS startup launch, including -
+                        Authentication, Database, Sanity Blog, Essential UI Components, Business Pages and More.
+                        Built-with - Next.js, React 18 and TypeScript.
+                    </p>
+
+                    <div class="mt-10">
+                        <a aria-label="get started button"
+                            class="inline-block rounded-full bg-black px-[30px] py-[10px] text-white duration-300 ease-in-out hover:bg-gray-800 dark:bg-black dark:border dark:border-neutral-700 dark:hover:bg-neutral-800"
+                            href="#">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <div class="animate_right mt-10 lg:mt-0 hidden md:w-1/2 lg:block">
+                    <div class="relative 2xl:-mr-[30px]">
+
+                        <img alt="shape" loading="lazy" width="46" height="246" class="absolute -left-[46px] top-0"
+                            src="../public/shape/shape-01.jpg">
+                        <img alt="shape" loading="lazy" width="36.9" height="36.7"
+                            class="absolute bottom-0 right-0 z-10" src="../public/shape/shape-02.svg">
+                        <img alt="shape" loading="lazy" width="21.64" height="21.66"
+                            class="absolute -right-[26px] bottom-0 z-1" src="../public/shape/shape-03.svg">
+
+                        <div class="relative aspect-[700/444] w-full">
+                            <img alt="Hero" loading="lazy"
+                                class="absolute inset-0 h-full w-full object-cover shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-lg dark:hidden"
+                                src="../public/hero/hero-light.svg">
+
+                            <img alt="Hero" loading="lazy"
+                                class="hidden absolute inset-0 h-full w-full object-cover shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] rounded-lg dark:block"
+                                src="../public/hero/hero-dark.svg">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Brand -->
-    <div></div>
+    <section
+        class="border border-x-0 border-y-gray-200 bg-[#FAFAFA] py-11 dark:border-y-neutral-800 dark:bg-black transition-colors duration-300">
+        <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
+            <div
+                class="grid grid-cols-3 items-center justify-center gap-[30px] md:grid-cols-6 lg:gap-[50px] xl:gap-[116px]">
+
+                <a href="#" class="animate_down relative block h-10 w-[98px] max-w-full mx-auto">
+                    <img alt="Client" loading="lazy"
+                        class="h-full w-full object-contain opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden"
+                        src="../public/brand/brand-light-01.svg">
+                    <img alt="Client" loading="lazy"
+                        class="hidden h-full w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100 dark:block"
+                        src="../public/brand/brand-dark-01.svg">
+                </a>
+
+                <a href="#" class="animate_down relative block h-10 w-[98px] max-w-full mx-auto"
+                    style="animation-delay: 0.1s; opacity: 0;">
+                    <img alt="Client" loading="lazy"
+                        class="h-full w-full object-contain opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden"
+                        src="../public/brand/brand-light-02.svg">
+                    <img alt="Client" loading="lazy"
+                        class="hidden h-full w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100 dark:block"
+                        src="../public/brand/brand-dark-02.svg">
+                </a>
+
+                <a href="#" class="animate_down relative block h-10 w-[98px] max-w-full mx-auto"
+                    style="animation-delay: 0.2s; opacity: 0;">
+                    <img alt="Client" loading="lazy"
+                        class="h-full w-full object-contain opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden"
+                        src="../public/brand/brand-light-03.svg">
+                    <img alt="Client" loading="lazy"
+                        class="hidden h-full w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100 dark:block"
+                        src="../public/brand/brand-dark-03.svg">
+                </a>
+
+                <a href="#" class="animate_down relative block h-10 w-[98px] max-w-full mx-auto"
+                    style="animation-delay: 0.3s; opacity: 0;">
+                    <img alt="Client" loading="lazy"
+                        class="h-full w-full object-contain opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden"
+                        src="../public/brand/brand-light-04.svg">
+                    <img alt="Client" loading="lazy"
+                        class="hidden h-full w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100 dark:block"
+                        src="../public/brand/brand-dark-04.svg">
+                </a>
+
+                <a href="#" class="animate_down relative block h-10 w-[98px] max-w-full mx-auto"
+                    style="animation-delay: 0.4s; opacity: 0;">
+                    <img alt="Client" loading="lazy"
+                        class="h-full w-full object-contain opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden"
+                        src="../public/brand/brand-light-05.svg">
+                    <img alt="Client" loading="lazy"
+                        class="hidden h-full w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100 dark:block"
+                        src="../public/brand/brand-dark-05.svg">
+                </a>
+
+                <a href="#" class="animate_down relative block h-10 w-[98px] max-w-full mx-auto"
+                    style="animation-delay: 0.5s; opacity: 0;">
+                    <img alt="Client" loading="lazy"
+                        class="h-full w-full object-contain opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden"
+                        src="../public/brand/brand-light-06.svg">
+                    <img alt="Client" loading="lazy"
+                        class="hidden h-full w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100 dark:block"
+                        src="../public/brand/brand-dark-06.svg">
+                </a>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Feature -->
-    <div></div>
+    <section id="features"
+        class="py-20 lg:py-[100px] xl:py-[120px] bg-white dark:bg-neutral-900 transition-colors duration-300">
+        <div class="mx-auto max-w-[1315px] px-4 md:px-8 xl:px-0">
 
-    <!-- Core Features -->
-    <div></div>
+            <div class="animate_down mx-auto text-center">
+                <div
+                    class="mb-4 inline-block rounded-full bg-[#EDF2FB] px-4.5 py-1.5 dark:border dark:border-neutral-800 dark:bg-[#1C2136]">
+                    <span class="text-[14px] font-medium text-black dark:text-white uppercase tracking-wider">
+                        Solid Features
+                    </span>
+                </div>
 
-    <!-- Core Capabilities -->
-    <div></div>
+                <h2
+                    class="mx-auto mb-4 text-5xl font-bold text-black dark:text-white md:w-4/5 xl:w-1/2 xl:leading-[1.2]">
+                    Core Features of Solid
+                </h2>
 
-    <!-- Solid Features -->
-    <div></div>
-
-    <!-- Company -->
-    <div></div>
-
-    <!-- Integration -->
-    <div></div>
-
-    <!-- Sign up free -->
-    <section class="signup-free">
-        <div class="signup-free__container">
-            <div class="signup-free__content anim-fade-left">
-                <h2 class="signup-free__title">Join With Us Today & Increase Your Productivity</h2>
-                <p class="signup-free__desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros.
-                    Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
+                <p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%] text-[#757693] dark:text-gray-400 text-[17px]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae
+                    tortor lacus. Phasellus aliquam ante in maximus.
                 </p>
             </div>
-            <div class="signup-free__action anim-fade-right">
-                <a href="#" class="signup-free__btn">
-                    Sign up free
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
+
+            <div
+                class="animate_down mt-12.5 grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-20 xl:gap-12.5">
+
+                <div
+                    class="z-40 rounded-lg border border-white bg-white p-7.5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-[#2D2F40] dark:bg-[#1C2136] dark:hover:bg-[#262B40] xl:p-12.5">
+                    <div class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-[#006BFF]">
+                        <img alt="icon" loading="lazy" width="36" height="36" src="../public/icon/icon-01.svg">
+                    </div>
+                    <h3 class="mb-5 mt-7.5 text-[26px] font-semibold text-black dark:text-white">
+                        Crafted for SaaS
+                    </h3>
+                    <p class="text-[#757693] dark:text-gray-400 text-[16px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+                    </p>
+                </div>
+
+                <div class="z-40 rounded-lg border border-white bg-white p-7.5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-[#2D2F40] dark:bg-[#1C2136] dark:hover:bg-[#262B40] xl:p-12.5"
+                    style="animation-delay: 0.1s;">
+                    <div class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-[#006BFF]">
+                        <img alt="icon" loading="lazy" width="36" height="36" src="../public/icon/icon-02.svg">
+                    </div>
+                    <h3 class="mb-5 mt-7.5 text-[26px] font-semibold text-black dark:text-white ">
+                        High-quality Design
+                    </h3>
+                    <p class="text-[#757693] dark:text-gray-400 text-[16px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+                    </p>
+                </div>
+
+                <div class="z-40 rounded-lg border border-white bg-white p-7.5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-[#2D2F40] dark:bg-[#1C2136] dark:hover:bg-[#262B40] xl:p-12.5"
+                    style="animation-delay: 0.2s;">
+                    <div class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-[#006BFF]">
+                        <img alt="icon" loading="lazy" width="36" height="36" src="../public/icon/icon-03.svg">
+                    </div>
+                    <h3 class="mb-5 mt-7.5 text-[26px] font-semibold text-black dark:text-white ">
+                        Next.js + TypeScript
+                    </h3>
+                    <p class="text-[#757693] dark:text-gray-400 text-[16px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+                    </p>
+                </div>
+
+                <div class="z-40 rounded-lg border border-white bg-white p-7.5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-[#2D2F40] dark:bg-[#1C2136] dark:hover:bg-[#262B40] xl:p-12.5"
+                    style="animation-delay: 0.3s;">
+                    <div class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-[#006BFF]">
+                        <img alt="icon" loading="lazy" width="36" height="36" src="../public/icon/icon-04.svg">
+                    </div>
+                    <h3 class="mb-5 mt-7.5 text-[26px] font-semibold text-black dark:text-white ">
+                        Sanity Blog and Docs
+                    </h3>
+                    <p class="text-[#757693] dark:text-gray-400 text-[16px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+                    </p>
+                </div>
+
+                <div class="z-40 rounded-lg border border-white bg-white p-7.5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-[#2D2F40] dark:bg-[#1C2136] dark:hover:bg-[#262B40] xl:p-12.5"
+                    style="animation-delay: 0.4s;">
+                    <div class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-[#006BFF]">
+                        <img alt="icon" loading="lazy" width="36" height="36" src="../public/icon/icon-05.svg">
+                    </div>
+                    <h3 class="mb-5 mt-7.5 text-[26px] font-semibold text-black dark:text-white ">
+                        DB, Auth and Stripe
+                    </h3>
+                    <p class="text-[#757693] dark:text-gray-400 text-[16px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+                    </p>
+                </div>
+
+                <div class="z-40 rounded-lg border border-white bg-white p-7.5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:border-[#2D2F40] dark:bg-[#1C2136] dark:hover:bg-[#262B40] xl:p-12.5"
+                    style="animation-delay: 0.5s;">
+                    <div class="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-[#006BFF]">
+                        <img alt="icon" loading="lazy" width="36" height="36" src="../public/icon/icon-06.svg">
+                    </div>
+                    <h3 class="mb-5 mt-7.5 text-[26px] font-semibold text-black dark:text-white ">
+                        Regular Free Updates
+                    </h3>
+                    <p class="text-[#757693] dark:text-gray-400 text-[16px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Core Features -->
+    <section class="overflow-hidden pb-20 lg:pb-25 xl:pb-30 bg-white dark:bg-black transition-colors duration-300">
+        <div class="mx-auto max-w-[1235px] px-4 md:px-8 xl:px-0">
+            <div class="flex items-center gap-8 lg:gap-[130px]">
+
+                <div class="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2">
+                    <img alt="About" loading="lazy" class="h-full w-full object-cover dark:hidden"
+                        src="../public/img_qt/image_1">
+                </div>
+
+                <div class="animate_right md:w-1/2">
+                    <h4 class="font-medium uppercase text-black dark:text-white flex items-center flex-wrap mb-4">
+                        <span
+                            class="mr-4 flex items-center inline-flex rounded-full bg-[#20c5a8] px-[18px] py-1 text-[12px] uppercase text-white">
+                            New
+                        </span>
+                        SaaS Boilerplate for Next.js
+                    </h4>
+
+                    <h2
+                        class="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-[46px] leading-[1.2]">
+                        A Complete Solution for
+                        <span
+                            class="relative z-10 inline-block before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:z-[-1] before:h-3 before:w-full before:bg-[#adfff8] dark:before:bg-[#1c2136]">
+                            SaaS Startup
+                        </span>
+                    </h2>
+
+                    <p class="text-[#757693] dark:text-gray-400 text-[15px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum
+                        ultrices. Fusce consectetur le.
+                    </p>
+
+                    <div class="mt-[30px] flex items-center gap-5">
+                        <div
+                            class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-neutral-900">
+                            <p class="text-[18px] font-semibold text-black dark:text-white">01</p>
+                        </div>
+                        <div class="w-3/4">
+                            <h3 class="mb-0.5 text-[19px]  text-black dark:text-white leading-snug">
+                                Mailchimp for Newsletter Emails + SMTP for Transactional Emails
+                            </h3>
+                            <p class="text-[#757693] dark:text-gray-400 text-[16px]">Ut ultricies lacus non fermentum
+                                ultrices.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-[30px] flex items-center gap-5">
+                        <div
+                            class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-neutral-900">
+                            <p class="text-[18px] font-semibold text-black dark:text-white">02</p>
+                        </div>
+                        <div class="w-3/4">
+                            <h3 class="mb-0.5 text-[19px]  text-black dark:text-white leading-snug">
+                                Algolia Integration for Site Search
+                            </h3>
+                            <p class="text-[#757693] dark:text-gray-400 text-[16px]">consectetur adipiscing elit
+                                fermentum
+                                ultricies.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Capabilities -->
+    <section class="py-20 lg:py-25 xl:py-30 bg-white dark:bg-black transition-colors duration-300">
+        <div class="mx-auto max-w-[1235px] overflow-hidden px-4 md:px-8 2xl:px-0">
+            <div class="flex items-center gap-8 lg:gap-[130px]">
+
+                <div class="animate_left md:w-1/2">
+                    <h4 class="font-medium uppercase text-black dark:text-white">
+                        Launch Your SaaS Fast
+                    </h4>
+
+                    <h2
+                        class="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-[46px] leading-[1.2]">
+                        Packed with All Essential
+                        <span
+                            class="relative ml-2.5 z-10 inline-block before:content-[''] before:absolute before:bottom-2.5 before:left-0 before:z-[-1] before:h-3 before:w-full before:bg-[#FFD583] dark:before:bg-[#262B40]">
+                            Integrations
+                        </span>
+                    </h2>
+
+                    <p class="text-[#757693] dark:text-gray-400 text-[15px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum
+                        ultrices. Fusce consectetur le.
+                    </p>
+
+                    <div>
+                        <a href="#"
+                            class="group mt-[30px] inline-flex items-center gap-2.5 text-black hover:text-[#006BFF] dark:text-white dark:hover:text-[#006BFF] transition-colors">
+                            <span class="duration-300 group-hover:pr-2">Know More</span>
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.4766 6.16664L6.00658 1.69664L7.18492 0.518311L13.6666 6.99998L7.18492 13.4816L6.00658 12.3033L10.4766 7.83331H0.333252V6.16664H10.4766Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2">
+                    <img alt="About" loading="lazy" class="h-full w-full object-contain dark:hidden"
+                        src="../public/img_qt/about-light-02.svg">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Solid Features -->
+    <section class="relative pb-20 pt-[74px] lg:pb-[90px] bg-white dark:bg-neutral-900 transition-colors duration-300">
+        <div class="relative mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
+
+            <div class="absolute left-0 right-0 -top-16 z-0 mx-auto h-[350px] w-[90%]">
+                <img alt="Dotted Shape" loading="lazy" class="h-full w-full object-contain dark:hidden"
+                    src="../public/shape/shape-dotted-light.svg">
+            </div>
+
+            <nav class="animate_top relative z-10 mb-[60px] flex flex-col md:flex-row flex-wrap justify-center rounded-[10px] border border-[#E2E8F0] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:border-neutral-800 dark:bg-[#1C2136] dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)] md:flex-nowrap md:items-center lg:gap-[30px] xl:mb-[86px] xl:gap-[50px]"
+                aria-label="Tabs" role="tablist">
+
+                <button type="button"
+                    class="hs-tab-active:before:bg-[#006BFF] active relative flex w-full cursor-pointer items-center gap-4 border-b border-[#E2E8F0] px-6 py-2 last:border-0 dark:border-neutral-800 md:w-auto md:border-0 xl:px-[54px] xl:py-5 before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:rounded-t-[4px] before:bg-transparent before:transition-colors transition-all"
+                    id="tab-1-item" data-hs-tab="#tab-1" aria-controls="tab-1" role="tab">
+                    <div
+                        class="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-[#1C2136]">
+                        <p class="text-[18px] font-medium text-black dark:text-white">01</p>
+                    </div>
+                    <div class="md:w-3/5 lg:w-auto text-left">
+                        <span class="text-sm font-medium text-black dark:text-white xl:text-[16px]">Clean User
+                            Interface</span>
+                    </div>
+                </button>
+
+                <button type="button"
+                    class="hs-tab-active:before:bg-[#006BFF] relative flex w-full cursor-pointer items-center gap-4 border-b border-[#E2E8F0] px-6 py-2 last:border-0 dark:border-neutral-800 md:w-auto md:border-0 xl:px-[54px] xl:py-5 before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:rounded-t-[4px] before:bg-transparent before:transition-colors transition-all"
+                    id="tab-2-item" data-hs-tab="#tab-2" aria-controls="tab-2" role="tab">
+                    <div
+                        class="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-[#1C2136]">
+                        <p class="text-[18px] font-medium text-black dark:text-white">02</p>
+                    </div>
+                    <div class="md:w-3/5 lg:w-auto text-left">
+                        <span class="text-sm font-medium text-black dark:text-white xl:text-[16px]">Essential Business
+                            Pages</span>
+                    </div>
+                </button>
+
+                <button type="button"
+                    class="hs-tab-active:before:bg-[#006BFF] relative flex w-full cursor-pointer items-center gap-4 border-b border-[#E2E8F0] px-6 py-2 last:border-0 dark:border-neutral-800 md:w-auto md:border-0 xl:px-[54px] xl:py-5 before:absolute before:bottom-0 before:left-0 before:h-1 before:w-full before:rounded-t-[4px] before:bg-transparent before:transition-colors transition-all"
+                    id="tab-3-item" data-hs-tab="#tab-3" aria-controls="tab-3" role="tab">
+                    <div
+                        class="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-[#1C2136]">
+                        <p class="text-[18px] font-medium text-black dark:text-white">03</p>
+                    </div>
+                    <div class="md:w-3/5 lg:w-auto text-left">
+                        <span class="text-sm font-medium text-black dark:text-white xl:text-[16px]">Fully Functional
+                            Integrations</span>
+                    </div>
+                </button>
+
+            </nav>
+
+            <div class="animate_top  delay_700 mx-auto max-w-[1154px]">
+
+                <div id="tab-1" role="tabpanel" aria-labelledby="tab-1-item">
+                    <div class="flex flex-col-reverse md:flex-row items-center gap-8 lg:gap-[76px]">
+                        <div class="md:w-1/2">
+                            <h2 class="mb-7 text-3xl font-bold text-black dark:text-white xl:text-[40px] leading-[1.2]">
+                                Solid UI with Solid<br>Features.</h2>
+                            <p class="mb-5 text-[#757693] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
+                            <p class="w-11/12 text-[#757693] dark:text-gray-400">Nam id eleifend dui, id iaculis purus.
+                                Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
+                        </div>
+                        <div class="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
+                            <img alt="Solid UI with Solid Features." loading="lazy"
+                                class="h-full w-full object-contain dark:hidden" src="../public/img_qt/image">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-2" class="hidden" role="tabpanel" aria-labelledby="tab-2-item">
+                    <div class="flex flex-col-reverse md:flex-row items-center gap-8 lg:gap-[76px]">
+                        <div class="md:w-1/2">
+                            <h2 class="mb-7 text-3xl font-bold text-black dark:text-white xl:text-[40px] leading-[1.2]">
+                                Pages and UI Components You Need for a SaaS.</h2>
+                            <p class="mb-5 text-[#757693] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
+                            <p class="w-11/12 text-[#757693] dark:text-gray-400">Nam id eleifend dui, id iaculis purus.
+                                Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
+                        </div>
+                        <div class="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
+                            <img alt="Solid UI with Solid Features." loading="lazy"
+                                class="h-full w-full object-contain dark:hidden" src="../public/img_qt/image">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-3" class="hidden" role="tabpanel" aria-labelledby="tab-3-item">
+                    <div class="flex flex-col-reverse md:flex-row items-center gap-8 lg:gap-[76px]">
+                        <div class="md:w-1/2">
+                            <h2 class="mb-7 text-3xl font-bold text-black dark:text-white xl:text-[40px] leading-[1.2]">
+                                Functional Blog, DB, Auth and Many More</h2>
+                            <p class="mb-5 text-[#757693] dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
+                            <p class="w-11/12 text-[#757693] dark:text-gray-400">Nam id eleifend dui, id iaculis purus.
+                                Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
+                        </div>
+                        <div class="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
+                            <img alt="Solid UI with Solid Features." loading="lazy"
+                                class="h-full w-full object-contain dark:hidden" src="../public/img_qt/image">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Company -->
+    <section
+        class="px-4 py-20 md:px-8 lg:py-[90px] 2xl:px-0 bg-white dark:bg-neutral-900 transition-colors duration-300">
+
+        <div
+            class="relative z-10 mx-auto max-w-[1390px] rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] py-[90px] dark:bg-[#1C2136] dark:bg-none dark:border dark:border-neutral-800 xl:py-[110px] overflow-visible">
+
+            <img alt="Man" loading="lazy" class="absolute -left-[60px] -top-[100px] z-0 lg:left-0 pointer-events-none"
+                src="../public/img_qt/image_man" width="335" height="384">
+            <img alt="Dotted" loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover z-0 dark:hidden pointer-events-none"
+                src="../public/shape/shape-dotted-light-02.svg">
+            <div
+                class="animate_top time_1300 relative z-10 mx-auto mb-[50px] px-4 text-center md:w-4/5 md:px-0 lg:mb-[70px] lg:w-2/3 xl:w-1/2">
+                <h2 class="mb-4 text-3xl font-bold text-black dark:text-white xl:text-[44px] leading-[1.2]">
+                    Trusted by Global Companies.
+                </h2>
+                <p class="mx-auto lg:w-11/12 text-[#757693] dark:text-gray-400">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae
+                    tortor lacus. Phasellus aliquam ante in maximus.
+                </p>
+            </div>
+
+            <div class="relative z-10 flex flex-wrap justify-center gap-8 lg:gap-[170px]">
+
+                <div class="animate_top time_1300  text-center" style="animation-delay: 0.4s;">
+                    <h3 class="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-[44px]">
+                        500K
+                    </h3>
+                    <p class="text-lg text-[#757693] dark:text-gray-400 lg:text-[22px] font-medium">
+                        World Wide Clients
+                    </p>
+                </div>
+
+                <div class="animate_top time_1300 text-center" style="animation-delay: 0.5s;">
+                    <h3 class="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-[44px]">
+                        1M+
+                    </h3>
+                    <p class="text-lg text-[#757693] dark:text-gray-400 lg:text-[22px] font-medium">
+                        Downloads
+                    </p>
+                </div>
+
+                <div class="animate_top time_1300 text-center" style="animation-delay: 0.6s;">
+                    <h3 class="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-[44px]">
+                        865
+                    </h3>
+                    <p class="text-lg text-[#757693] dark:text-gray-400 lg:text-[22px] font-medium">
+                        Winning Award
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration -->
+    <section class="py-20 lg:py-[100px] bg-white dark:bg-neutral-900 transition-colors duration-300 overflow-hidden">
+
+        <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
+            <div class="animate_top time_1000 mx-auto text-center">
+                <div
+                    class="mb-4 inline-block rounded-full bg-[#EDF2FB] px-[18px] py-[6px] dark:border dark:border-neutral-800 dark:bg-[#1C2136]">
+                    <span class="text-[14px] font-medium text-black dark:text-white uppercase tracking-wider">
+                        INTEGRATIONS
+                    </span>
+                </div>
+
+                <h2
+                    class="mx-auto mb-4 text-3xl font-bold text-black dark:text-white md:w-4/5 xl:w-1/2 xl:text-[44px] leading-[1.2]">
+                    Packed with all the key integrations you need
+                </h2>
+
+                <p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%] text-[#757693] dark:text-gray-400">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae
+                    tortor lacus. Phasellus aliquam ante in maximus.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative z-10 mx-auto mt-[60px] max-w-[1154px] px-4 md:px-8 xl:mt-[80px] xl:px-0">
+
+            <div class="absolute -top-3/4 left-0 right-0 z-[-1] mx-auto h-full w-full pointer-events-none">
+                <img alt="Dotted" loading="lazy" class="w-full object-contain dark:hidden"
+                    src="../public/shape/shape-dotted-light.svg">
+                <img alt="Dotted" loading="lazy" class="hidden w-full object-contain dark:block"
+                    src="../public/shape/shape-dotted-dark.svg">
+            </div>
+
+            <div class="flex flex-wrap justify-around gap-y-10 items-center">
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div
+                        class="inline-block rounded-[10px] bg-white p-[18px] shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:bg-[#1C2136] dark:border dark:border-neutral-800">
+                        <img alt="Brand" loading="lazy" width="50" height="50" src="../public/brand/brand-07.svg">
+                    </div>
+                </div>
+
+                <div class="w-1/6 hidden md:block"></div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div
+                        class="inline-block rounded-[10px] bg-white p-[18px] shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:bg-[#1C2136] dark:border dark:border-neutral-800">
+                        <img alt="Brand" loading="lazy" width="50" height="50" src="../public/brand/brand-08.svg">
+                    </div>
+                </div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div class="h-[11px] w-[11px] rounded-full bg-[#FFDB26]"></div>
+                </div>
+
+                <div class="animate_top time_1000flex w-1/6 justify-center">
+                    <div
+                        class="inline-block rounded-[10px] bg-white p-[18px] shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:bg-[#1C2136] dark:border dark:border-neutral-800">
+                        <img alt="Brand" loading="lazy" width="50" height="50" src="../public/brand/brand-09.svg">
+                    </div>
+                </div>
+
+                <div class="w-1/6 hidden md:block"></div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div class="h-[15px] w-[15px] rounded-full bg-[#62E888]"></div>
+                </div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div
+                        class="inline-block rounded-[10px] bg-white p-[18px] shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:bg-[#1C2136] dark:border dark:border-neutral-800">
+                        <img alt="Brand" loading="lazy" width="50" height="50" src="../public/brand/brand-10.svg">
+                    </div>
+                </div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div class="h-[23px] w-[23px] rounded-full bg-[#EF5C00]"></div>
+                </div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div
+                        class="inline-block rounded-[10px] bg-white p-[18px] shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:bg-[#1C2136] dark:border dark:border-neutral-800">
+                        <img alt="Brand" loading="lazy" width="50" height="50" src="../public/brand/brand-11.svg">
+                    </div>
+                </div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div class="h-[15px] w-[15px] rounded-full bg-[#016BFF]"></div>
+                </div>
+
+                <div class="animate_top time_1000 flex w-1/6 justify-center">
+                    <div
+                        class="inline-block rounded-[10px] bg-white p-[18px] shadow-[0_10px_40px_rgba(0,0,0,0.06)] dark:bg-[#1C2136] dark:border dark:border-neutral-800">
+                        <img alt="Brand" loading="lazy" width="50" height="50" src="../public/brand/brand-12.svg">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign up free -->
+    <div></div>
 
     <!-- Support -->
-    <section class="support" id="support">
-        <div class="support__container">
-            <div class="support__left anim-fade-left">
-                <span class="support__label">OUR FAQS</span>
-                <h2 class="support__title">Frequently Asked <span class="support__title-highlight">Questions</span></h2>
-                <a href="#" class="support__link">
-                    Know More
-                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </div>
-            <div class="support__right anim-fade-right">
-                <div class="faq-item faq-item--active">
-                    <button class="faq-item__question" onclick="toggleFaq(this)">
-                        <span>Lorem ipsum dolor sit amet, consectetur</span>
-                        <span class="faq-item__icon">&minus;</span>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>We provide digital experience services to startups and small
-                            businesses. We help our clients succeed by creating brand
-                            identities, digital experiences.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question" onclick="toggleFaq(this)">
-                        <span>Lorem ipsum dolor sit amet, consectetur</span>
-                        <span class="faq-item__icon">+</span>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>We provide digital experience services to startups and small
-                            businesses. We help our clients succeed by creating brand
-                            identities, digital experiences.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-item__question" onclick="toggleFaq(this)">
-                        <span>Lorem ipsum dolor sit amet, consectetur</span>
-                        <span class="faq-item__icon">+</span>
-                    </button>
-                    <div class="faq-item__answer">
-                        <p>We provide digital experience services to startups and small
-                            businesses. We help our clients succeed by creating brand
-                            identities, digital experiences.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div></div>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="testimonials__container">
-            <div class="testimonials__header anim-fade-top">
-                <span class="testimonials__badge">TESTIMONIALS</span>
-                <h2 class="testimonials__title">Client's Testimonials</h2>
-                <p class="testimonials__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis
-                    tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.</p>
-            </div>
-
-            <div class="testimonials__slider-wrapper anim-fade-top anim-delay-2">
-                <div class="testimonials__slider" id="testimonialsSlider">
-                    <!-- Review 1 -->
-                    <div class="testimonials__card">
-                        <div class="testimonials__card-header">
-                            <div class="testimonials__card-info">
-                                <h4 class="testimonials__card-name">Devid Smith</h4>
-                                <span class="testimonials__card-role">Founter @democompany</span>
-                            </div>
-                            <div class="testimonials__card-avatar">
-                                <img src="./images/user-01.webp" alt="Devid Smith" />
-                            </div>
-                        </div>
-                        <hr class="testimonials__card-divider">
-                        <p class="testimonials__card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet
-                            cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.
-                        </p>
-                    </div>
-
-                    <!-- Review 2 -->
-                    <div class="testimonials__card">
-                        <div class="testimonials__card-header">
-                            <div class="testimonials__card-info">
-                                <h4 class="testimonials__card-name">Jhon Abraham</h4>
-                                <span class="testimonials__card-role">Founter @democompany</span>
-                            </div>
-                            <div class="testimonials__card-avatar">
-                                <img src="./images/user-02.webp" alt="Jhon Abraham" />
-                            </div>
-                        </div>
-                        <hr class="testimonials__card-divider">
-                        <p class="testimonials__card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet
-                            cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.
-                        </p>
-                    </div>
-
-                    <!-- Review 3 -->
-                    <div class="testimonials__card">
-                        <div class="testimonials__card-header">
-                            <div class="testimonials__card-info">
-                                <h4 class="testimonials__card-name">Devid Smith</h4>
-                                <span class="testimonials__card-role">Founter @democompany</span>
-                            </div>
-                            <div class="testimonials__card-avatar">
-                                <img src="./images/user-01.webp" alt="Devid Smith" />
-                            </div>
-                        </div>
-                        <hr class="testimonials__card-divider">
-                        <p class="testimonials__card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet
-                            cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.
-                        </p>
-                    </div>
-
-                    <!-- Review 4 -->
-                    <div class="testimonials__card">
-                        <div class="testimonials__card-header">
-                            <div class="testimonials__card-info">
-                                <h4 class="testimonials__card-name">Jhon Abraham</h4>
-                                <span class="testimonials__card-role">Founter @democompany</span>
-                            </div>
-                            <div class="testimonials__card-avatar">
-                                <img src="./images/user-02.webp" alt="Jhon Abraham" />
-                            </div>
-                        </div>
-                        <hr class="testimonials__card-divider">
-                        <p class="testimonials__card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet
-                            cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.
-                        </p>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Customer reviews -->
+    <div></div>
 
     <!-- Price -->
-    <section class="pricing" id="pricing">
-        <div class="pricing__container">
-            <div class="pricing__header anim-fade-top">
-                <span class="pricing__badge">PRICING PLANS</span>
-                <h2 class="pricing__title">Simple Pricing</h2>
-                <p class="pricing__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor
-                    eros.
-                    Donec vitae tortor lacus. Phasellus aliquam ante in maximus.</p>
-            </div>
-
-            <div class="pricing__grid anim-fade-top anim-delay-2">
-                <!-- Small Pack -->
-                <div class="pricing__card">
-                    <div class="pricing__card-top">
-                        <div class="pricing__price">
-                            <span class="pricing__currency">$</span>
-                            <span class="pricing__amount">100</span>
-                            <span class="pricing__period">/month</span>
-                        </div>
-                        <h3 class="pricing__pack-name">Small Pack</h3>
-                        <p class="pricing__pack-desc">Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-                    </div>
-                    <div class="pricing__card-bottom">
-                        <ul class="pricing__features">
-                            <li class="pricing__feature">300 GB Storage</li>
-                            <li class="pricing__feature">Unlimited Photos and Videos</li>
-                            <li class="pricing__feature pricing__feature--disabled">Exclusive Support</li>
-                            <li class="pricing__feature pricing__feature--disabled">Custom Branding Strategy</li>
-                        </ul>
-                        <a href="#" class="pricing__link">
-                            Get the Plan
-                            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Medium Pack (Popular) -->
-                <div class="pricing__card pricing__card--popular">
-                    <span class="pricing__popular-badge">POPULAR</span>
-                    <div class="pricing__card-top">
-                        <div class="pricing__price">
-                            <span class="pricing__currency">$</span>
-                            <span class="pricing__amount">200</span>
-                            <span class="pricing__period">/month</span>
-                        </div>
-                        <h3 class="pricing__pack-name">Medium Pack</h3>
-                        <p class="pricing__pack-desc">Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-                    </div>
-                    <div class="pricing__card-bottom">
-                        <ul class="pricing__features">
-                            <li class="pricing__feature">300 GB Storage</li>
-                            <li class="pricing__feature">Unlimited Photos and Videos</li>
-                            <li class="pricing__feature">Exclusive Support</li>
-                            <li class="pricing__feature pricing__feature--disabled">Custom Branding Strategy</li>
-                        </ul>
-                        <a href="#" class="pricing__link">
-                            Get the Plan
-                            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Large Pack -->
-                <div class="pricing__card">
-                    <div class="pricing__card-top">
-                        <div class="pricing__price">
-                            <span class="pricing__currency">$</span>
-                            <span class="pricing__amount">300</span>
-                            <span class="pricing__period">/month</span>
-                        </div>
-                        <h3 class="pricing__pack-name">Large Pack</h3>
-                        <p class="pricing__pack-desc">Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-                    </div>
-                    <div class="pricing__card-bottom">
-                        <ul class="pricing__features">
-                            <li class="pricing__feature">300 GB Storage</li>
-                            <li class="pricing__feature">Unlimited Photos and Videos</li>
-                            <li class="pricing__feature">Exclusive Support</li>
-                            <li class="pricing__feature">Custom Branding Strategy</li>
-                        </ul>
-                        <a href="#" class="pricing__link">
-                            Get the Plan
-                            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div></div>
 
     <!-- Form -->
-    <section class="contact" id="contact">
-        <div class="contact__container anim-fade-top">
-            <div class="contact__form-wrapper">
-                <h2 class="contact__form-title">Send a message</h2>
-                <form class="contact__form">
-                    <div class="contact__form-grid">
-                        <input type="text" class="contact__input" placeholder="Full name">
-                        <input type="email" class="contact__input" placeholder="Email address">
-                        <input type="text" class="contact__input" placeholder="Subject">
-                        <input type="tel" class="contact__input" placeholder="Phone number">
-                    </div>
-                    <textarea class="contact__textarea" placeholder="Message" rows="5"></textarea>
-                    <div class="contact__form-footer">
-                        <label class="contact__checkbox-label">
-                            <input type="checkbox" class="contact__checkbox">
-                            <span>By clicking Checkbox, you agree to use our "Form" terms And consent cookie usage in
-                                browser.</span>
-                        </label>
-                        <button type="submit" class="contact__submit-btn">
-                            Send Message
-                            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
-                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="contact__info">
-                <h2 class="contact__info-title">Find us</h2>
-                <div class="contact__info-block">
-                    <h4 class="contact__info-label">Our Loaction</h4>
-                    <p class="contact__info-text">290 Maryam Springs 260, Courbevoie, Paris, France</p>
-                </div>
-                <div class="contact__info-block">
-                    <h4 class="contact__info-label">Email Address</h4>
-                    <p class="contact__info-text">yourmail@domainname.com</p>
-                </div>
-                <div class="contact__info-block">
-                    <h4 class="contact__info-label">Phone Number</h4>
-                    <p class="contact__info-text">+009 42334 6343 843</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div></div>
 
     <!-- Blog -->
-    <section class="blog" id="blog">
-        <div class="blog__container">
-            <div class="blog__header anim-fade-top">
-                <span class="blog__badge">NEWS & BLOGS</span>
-                <h2 class="blog__title">Latest News & Blogs</h2>
-                <p class="blog__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros.
-                    Donec vitae tortor lacus. Phasellus aliquam ante in maximus.</p>
-            </div>
-
-            <div class="blog__grid anim-fade-top anim-delay-2">
-                <!-- Blog Card 1 -->
-                <article class="blog__card">
-                    <div class="blog__card-image">
-                        <div class="blog__card-image-inner">
-                            <img src="./images/blog1.webp" alt="Exploring MERN Stack">
-                        </div>
-                    </div>
-                    <div class="blog__card-body">
-                        <h3 class="blog__card-title">Exploring MERN Stack: Powering Modern We...</h3>
-                        <p class="blog__card-text">In the world of web development, staying ahead of the curve is
-                            crucial. One technology stack that ha</p>
-                    </div>
-                </article>
-
-                <!-- Blog Card 2 -->
-                <article class="blog__card">
-                    <div class="blog__card-image">
-                        <div class="blog__card-image-inner">
-                            <img src="./images/blog2.webp" alt="Best UI components">
-                        </div>
-                    </div>
-                    <div class="blog__card-body">
-                        <h3 class="blog__card-title">Best UI components for modern website...</h3>
-                        <p class="blog__card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat...</p>
-                    </div>
-                </article>
-
-                <!-- Blog Card 3 -->
-                <article class="blog__card">
-                    <div class="blog__card-image">
-                        <div class="blog__card-image-inner">
-                            <img src="./images/blog3_1.webp" alt="The Power of UI/UX">
-                        </div>
-                    </div>
-                    <div class="blog__card-body">
-                        <h3 class="blog__card-title">The Power of UI/UX: Elevating Digital Ex...</h3>
-                        <p class="blog__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit
-                            amet dictum neque, laoreet dolor.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+    <div></div>
 
     <!-- Footer -->
-    <footer class="footer" id="footer">
-        <div class="footer__container">
-            <div class="footer__top anim-fade-top">
-                <!-- Brand Column -->
-                <div class="footer__brand">
-                    <a href="#" class="footer__logo">
-                        <img src="../public/logo/logo-light.svg" alt="Solid Logo" class="footer__logo-img">
-                        <span class="footer__logo-text">Solid</span>
-                    </a>
-                    <p class="footer__brand-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="footer__contact">
-                        <span class="footer__contact-label">CONTACT</span>
-                        <a href="mailto:hello@solid.com" class="footer__contact-email">hello@solid.com</a>
-                    </div>
-                </div>
-
-                <!-- Quick Links Column -->
-                <div class="footer__links-col">
-                    <h4 class="footer__col-title">Quick Links</h4>
-                    <ul class="footer__links">
-                        <li><a href="#" class="footer__link">Home</a></li>
-                        <li><a href="#" class="footer__link">Product</a></li>
-                        <li><a href="#" class="footer__link">Careers</a></li>
-                        <li><a href="#" class="footer__link">Pricing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support Column -->
-                <div class="footer__links-col">
-                    <h4 class="footer__col-title">Support</h4>
-                    <ul class="footer__links">
-                        <li><a href="#" class="footer__link">Company</a></li>
-                        <li><a href="#" class="footer__link">Press media</a></li>
-                        <li><a href="#" class="footer__link">Our Blog</a></li>
-                        <li><a href="#" class="footer__link">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter Column -->
-                <div class="footer__newsletter">
-                    <h4 class="footer__col-title">Newsletter</h4>
-                    <p class="footer__newsletter-desc">Subscribe to receive future updates</p>
-                    <form class="footer__newsletter-form">
-                        <input type="email" class="footer__newsletter-input" placeholder="Email address">
-                        <button type="submit" class="footer__newsletter-btn" aria-label="Subscribe">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 2L11 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="1.8"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="footer__bottom anim-fade-top">
-                <div class="footer__bottom-links">
-                    <a href="#" class="footer__bottom-link">English</a>
-                    <a href="#" class="footer__bottom-link">Privacy Policy</a>
-                    <a href="#" class="footer__bottom-link">Support</a>
-                </div>
-                <p class="footer__copyright">&copy; 2026 Solid. All rights reserved</p>
-                <div class="footer__socials">
-                    <a href="#" class="footer__social" aria-label="Facebook">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer__social" aria-label="Twitter">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer__social" aria-label="LinkedIn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                            <circle cx="4" cy="4" r="2" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer__social" aria-label="Behance">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zM9.015 18.5H2V5.5h7.434C11.8 5.5 13.733 6.472 13.733 9.021c0 1.463-.6 2.394-1.871 2.898 1.723.53 2.51 1.912 2.51 3.432 0 2.833-2.185 3.665-4.357 3.149h-1zM4.95 11.1h3.96c1.498 0 2.312-.728 2.312-1.85 0-1.336-.937-1.772-2.142-1.772H4.95v3.622zm0 5.526h3.76c1.523 0 2.453-.63 2.453-2.03 0-1.424-.76-2.126-2.558-2.126H4.95v4.156z" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div></div>
 
     <!-- Back to top -->
-    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"
-        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
+    <div></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./node_modules/preline/dist/preline.js"></script>
+    <script src="../node_modules/preline/dist/preline.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
