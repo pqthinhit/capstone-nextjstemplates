@@ -1,4 +1,10 @@
 {
+  "name": "capstone-nextjstemplates",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --minify" 
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.2.2",
     "preline": "^4.1.3",
