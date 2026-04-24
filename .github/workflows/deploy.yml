@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci
-      - run: npx @tailwindcss/cli -i .\src\css\input.css -o .\src\css\output.css --watch 
+      - run: npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
