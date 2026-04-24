@@ -21,3 +21,8 @@ npm install tailwindcss @tailwindcss/cli
 ```Terminal
 npx @tailwindcss/cli -i .\src\css\input.css -o .\src\css\output.css --watch
 ```
+
+### [03] Install Preline UI
+```Terminal
+npm i preline
+```
