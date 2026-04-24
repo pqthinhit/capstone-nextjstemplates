@@ -5,10 +5,10 @@ function initHeaderScroll() {
 
     window.addEventListener('scroll', function () {
         if (window.scrollY > 20) {
-            header.classList.add('bg-white', 'dark:bg-neutral-900', 'shadow-sm', 'dark:shadow-neutral-800/50', 'py-4');
+            header.classList.add('bg-white', 'dark:bg-[#181C31]', 'shadow-sm', 'dark:shadow-neutral-800/50', 'py-4');
             header.classList.remove('bg-transparent', 'py-7');
         } else {
-            header.classList.remove('bg-white', 'dark:bg-neutral-900', 'shadow-sm', 'dark:shadow-neutral-800/50', 'py-4');
+            header.classList.remove('bg-white', 'dark:bg-[#181C31]', 'shadow-sm', 'dark:shadow-neutral-800/50', 'py-4');
             header.classList.add('bg-transparent', 'py-7');
         }
     });
@@ -74,7 +74,7 @@ function initScrollTop() {
 
 // Scroll Animation (IntersectionObserver)
 function initScrollAnimations() {
-    const animElements = document.querySelectorAll('.anim-fade-left, .anim-fade-right, .anim-fade-top');
+    const animElements = document.querySelectorAll('.anim-fade-left, .anim-fade-right, .anim-fade-top, .animate_top, .animate_left, .animate_down, .animate_right');
     if (!animElements.length) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -97,4 +97,29 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonialsSlider();
     initScrollTop();
     initScrollAnimations();
+});
+
+function initDarkMode() {
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const htmlElement = document.documentElement; 
+
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+    } else {
+        htmlElement.classList.remove('dark');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            
+            htmlElement.classList.toggle('dark');
+            localStorage.theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initDarkMode();
 });

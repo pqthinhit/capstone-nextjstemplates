@@ -1376,3 +1376,79 @@
         font-size: 32px;
     }
 }
+
+.animate_right,
+.animate_down,
+.animate_left,
+.animate_top {
+    opacity: 0;
+    will-change: transform, opacity; 
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate_right.anim-visible {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate_down.anim-visible {
+    animation: slideInDown 0.8s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate_left.anim-visible {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate_top.anim-visible {
+  animation: slideInDown 0.8s ease-out both;
+}
+
+.delay_700 {
+  animation-delay: 0.7s;
+}
+
+.time_1300 {
+    animation-duration: 1.8s;
+}
+
+.time_1000 {
+    animation-duration: 1s;
+}

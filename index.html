@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
 <body>
@@ -115,7 +115,7 @@
                             </svg>
                         </button>
 
-                        <button aria-label="theme toggler"
+                        <button id="theme-toggle-btn" aria-label="theme toggler"
                             class="absolute right-[68px] xl:static flex cursor-pointer items-center justify-center rounded-full bg-transparent p-[9px] text-black dark:text-white">
                             <img alt="moon" loading="lazy" width="21" height="21" class="dark:hidden"
                                 src="../public/icon/icon-moon.svg">
@@ -137,13 +137,13 @@
 
     <!-- Carousel -->
     <section
-        class="overflow-hidden pb-20 pt-[140px] md:pt-[160px] xl:pb-[100px] xl:pt-[184px] bg-white dark:bg-neutral-900 transition-colors duration-300">
+        class="overflow-hidden pb-20 pt-[140px] md:pt-[160px] xl:pb-[100px] xl:pt-[184px] bg-white dark:bg-[#1C2136] transition-colors duration-300">
         <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
             <div class="flex flex-col lg:flex-row lg:items-center lg:gap-8 xl:gap-[130px]">
 
                 <div class="md:w-1/2">
                     <h4 class="mb-[18px] text-lg font-medium text-black dark:text-white">
-                        â‰¡Æ’Ã¶Ã‘ Solid - A Complete SaaS Starter Template for SaaS
+                        🔥 Solid - A Complete SaaS Starter Template for SaaS
                     </h4>
 
                     <h1
@@ -163,7 +163,7 @@
 
                     <div class="mt-10">
                         <a aria-label="get started button"
-                            class="inline-block rounded-full bg-black px-[30px] py-[10px] text-white duration-300 ease-in-out hover:bg-gray-800 dark:bg-black dark:border dark:border-neutral-700 dark:hover:bg-neutral-800"
+                            class="inline-block rounded-full bg-black px-[30px] py-[10px] text-white duration-300 ease-in-out hover:bg-gray-800 dark:bg-[#1C2136] dark:border dark:border-neutral-700 dark:hover:bg-neutral-800"
                             href="#">
                             Get Started
                         </a>
@@ -199,7 +199,7 @@
 
     <!-- Brand -->
     <section
-        class="border border-x-0 border-y-gray-200 bg-[#FAFAFA] py-11 dark:border-y-neutral-800 dark:bg-black transition-colors duration-300">
+        class="border border-x-0 border-y-gray-200 bg-[#FAFAFA] py-11 dark:border-y-neutral-600 dark:bg-[#1C2136] transition-colors duration-300">
         <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
             <div
                 class="grid grid-cols-3 items-center justify-center gap-[30px] md:grid-cols-6 lg:gap-[50px] xl:gap-[116px]">
@@ -269,7 +269,7 @@
 
     <!-- Feature -->
     <section id="features"
-        class="py-20 lg:py-[100px] xl:py-[120px] bg-white dark:bg-neutral-900 transition-colors duration-300">
+        class="py-20 lg:py-[100px] xl:py-[120px] bg-white dark:bg-[#1C2136] transition-colors duration-300">
         <div class="mx-auto max-w-[1315px] px-4 md:px-8 xl:px-0">
 
             <div class="animate_down mx-auto text-center">
@@ -377,13 +377,15 @@
     </section>
 
     <!-- Core Features -->
-    <section class="overflow-hidden pb-20 lg:pb-25 xl:pb-30 bg-white dark:bg-black transition-colors duration-300">
+    <section class="overflow-hidden pb-20 lg:pb-25 xl:pb-30 bg-white dark:bg-[#1C2136] transition-colors duration-300">
         <div class="mx-auto max-w-[1235px] px-4 md:px-8 xl:px-0">
             <div class="flex items-center gap-8 lg:gap-[130px]">
 
                 <div class="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2">
                     <img alt="About" loading="lazy" class="h-full w-full object-cover dark:hidden"
                         src="../public/img_qt/image_1">
+                    <img alt="About" loading="lazy" class="h-full w-full object-cover hidden dark:block"
+                        src="../public/img_qt/image_dark_1">
                 </div>
 
                 <div class="animate_right md:w-1/2">
@@ -411,7 +413,7 @@
 
                     <div class="mt-[30px] flex items-center gap-5">
                         <div
-                            class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-neutral-900">
+                            class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-600 dark:bg-[#1C2136]">
                             <p class="text-[18px] font-semibold text-black dark:text-white">01</p>
                         </div>
                         <div class="w-3/4">
@@ -425,7 +427,7 @@
 
                     <div class="mt-[30px] flex items-center gap-5">
                         <div
-                            class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-800 dark:bg-neutral-900">
+                            class="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[50%] border border-[#E2E8F0] dark:border-neutral-600 dark:bg-[#1C2136]">
                             <p class="text-[18px] font-semibold text-black dark:text-white">02</p>
                         </div>
                         <div class="w-3/4">
@@ -444,7 +446,7 @@
     </section>
 
     <!-- Core Capabilities -->
-    <section class="py-20 lg:py-25 xl:py-30 bg-white dark:bg-black transition-colors duration-300">
+    <section class="py-20 lg:py-25 xl:py-30 bg-white dark:bg-[#1C2136] transition-colors duration-300">
         <div class="mx-auto max-w-[1235px] overflow-hidden px-4 md:px-8 2xl:px-0">
             <div class="flex items-center gap-8 lg:gap-[130px]">
 
@@ -483,6 +485,8 @@
                 <div class="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2">
                     <img alt="About" loading="lazy" class="h-full w-full object-contain dark:hidden"
                         src="../public/img_qt/about-light-02.svg">
+                    <img alt="About" loading="lazy" class="h-full w-full object-contain hidden dark:block"
+                        src="../public/img_qt/about-dark-02.svg">
                 </div>
 
             </div>
@@ -490,15 +494,17 @@
     </section>
 
     <!-- Solid Features -->
-    <section class="relative pb-20 pt-[74px] lg:pb-[90px] bg-white dark:bg-neutral-900 transition-colors duration-300">
+    <section class="relative pb-20 pt-[74px] lg:pb-[90px] bg-white dark:bg-[#1C2136] transition-colors duration-300">
         <div class="relative mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
 
             <div class="absolute left-0 right-0 -top-16 z-0 mx-auto h-[350px] w-[90%]">
                 <img alt="Dotted Shape" loading="lazy" class="h-full w-full object-contain dark:hidden"
                     src="../public/shape/shape-dotted-light.svg">
+                <img alt="Dotted Shape" loading="lazy" class="h-full w-full object-contain hidden dark:block"
+                    src="../public/shape/shape-dotted-dark.svg">
             </div>
 
-            <nav class="animate_top relative z-10 mb-[60px] flex flex-col md:flex-row flex-wrap justify-center rounded-[10px] border border-[#E2E8F0] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:border-neutral-800 dark:bg-[#1C2136] dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)] md:flex-nowrap md:items-center lg:gap-[30px] xl:mb-[86px] xl:gap-[50px]"
+            <nav class="animate_top relative z-10 mb-[60px] flex flex-col md:flex-row flex-wrap justify-center rounded-[10px] border border-[#E2E8F0] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:border-neutral-600 dark:bg-[#1C2136] dark:shadow-[0_4px_20px_rgba(255,255,255,0.1)] md:flex-nowrap md:items-center lg:gap-[30px] xl:mb-[86px] xl:gap-[50px]"
                 aria-label="Tabs" role="tablist">
 
                 <button type="button"
@@ -557,6 +563,9 @@
                         <div class="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
                             <img alt="Solid UI with Solid Features." loading="lazy"
                                 class="h-full w-full object-contain dark:hidden" src="../public/img_qt/image">
+                            <img alt="Solid UI with Solid Features." loading="lazy"
+                                class="h-full w-full object-contain hidden dark:block"
+                                src="../public/img_qt/features-dark-01.svg">
                         </div>
                     </div>
                 </div>
@@ -574,6 +583,9 @@
                         <div class="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
                             <img alt="Solid UI with Solid Features." loading="lazy"
                                 class="h-full w-full object-contain dark:hidden" src="../public/img_qt/image">
+                            <img alt="Solid UI with Solid Features." loading="lazy"
+                                class="h-full w-full object-contain hidden dark:block"
+                                src="../public/img_qt/features-dark-01.svg">
                         </div>
                     </div>
                 </div>
@@ -591,6 +603,9 @@
                         <div class="relative mx-auto hidden aspect-[562/366] max-w-[550px] md:block md:w-1/2">
                             <img alt="Solid UI with Solid Features." loading="lazy"
                                 class="h-full w-full object-contain dark:hidden" src="../public/img_qt/image">
+                            <img alt="Solid UI with Solid Features." loading="lazy"
+                                class="h-full w-full object-contain hidden dark:block"
+                                src="../public/img_qt/features-dark-01.svg">
                         </div>
                     </div>
                 </div>
@@ -600,17 +615,22 @@
     </section>
 
     <!-- Company -->
-    <section
-        class="px-4 py-20 md:px-8 lg:py-[90px] 2xl:px-0 bg-white dark:bg-neutral-900 transition-colors duration-300">
+    <section class="px-4 py-20 md:px-8 lg:py-[90px] 2xl:px-0 bg-white dark:bg-[#1C2136] transition-colors duration-300">
 
         <div
-            class="relative z-10 mx-auto max-w-[1390px] rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] py-[90px] dark:bg-[#1C2136] dark:bg-none dark:border dark:border-neutral-800 xl:py-[110px] overflow-visible">
+            class="relative z-10 mx-auto max-w-[1390px] rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] py-[90px] dark:bg-[#282d45] dark:bg-none dark:border dark:border-neutral-800 xl:py-[110px] overflow-visible">
 
             <img alt="Man" loading="lazy" class="absolute -left-[60px] -top-[100px] z-0 lg:left-0 pointer-events-none"
                 src="../public/img_qt/image_man" width="335" height="384">
+            <img alt="Doodle" loading="lazy" width="132" height="132"
+                class="absolute bottom-0 right-0 -z-1"
+                src="../public/shape/image_doddle" style="color: transparent;">
             <img alt="Dotted" loading="lazy"
                 class="absolute inset-0 h-full w-full object-cover z-0 dark:hidden pointer-events-none"
                 src="../public/shape/shape-dotted-light-02.svg">
+            <img alt="Dotted" loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover z-0 hidden dark:block pointer-events-none"
+                src="../public/shape/shape-dotted-dark-02.svg">
             <div
                 class="animate_top time_1300 relative z-10 mx-auto mb-[50px] px-4 text-center md:w-4/5 md:px-0 lg:mb-[70px] lg:w-2/3 xl:w-1/2">
                 <h2 class="mb-4 text-3xl font-bold text-black dark:text-white xl:text-[44px] leading-[1.2]">
@@ -656,7 +676,7 @@
     </section>
 
     <!-- Integration -->
-    <section class="py-20 lg:py-[100px] bg-white dark:bg-neutral-900 transition-colors duration-300 overflow-hidden">
+    <section class="py-20 lg:py-[100px] bg-white dark:bg-[#1C2136] transition-colors duration-300 overflow-hidden">
 
         <div class="mx-auto max-w-[1390px] px-4 md:px-8 2xl:px-0">
             <div class="animate_top time_1000 mx-auto text-center">
@@ -850,7 +870,7 @@
                                 <span class="testimonials__card-role">Founter @democompany</span>
                             </div>
                             <div class="testimonials__card-avatar">
-                                <img src="./images/user-01.webp" alt="Devid Smith" />
+                                <img src="./src/images/user-01.webp" alt="Devid Smith" />
                             </div>
                         </div>
                         <hr class="testimonials__card-divider">
@@ -868,7 +888,7 @@
                                 <span class="testimonials__card-role">Founter @democompany</span>
                             </div>
                             <div class="testimonials__card-avatar">
-                                <img src="./images/user-02.webp" alt="Jhon Abraham" />
+                                <img src="./src/images/user-02.webp" alt="Jhon Abraham" />
                             </div>
                         </div>
                         <hr class="testimonials__card-divider">
@@ -886,7 +906,7 @@
                                 <span class="testimonials__card-role">Founter @democompany</span>
                             </div>
                             <div class="testimonials__card-avatar">
-                                <img src="./images/user-01.webp" alt="Devid Smith" />
+                                <img src="./src/images/user-01.webp" alt="Devid Smith" />
                             </div>
                         </div>
                         <hr class="testimonials__card-divider">
@@ -904,7 +924,7 @@
                                 <span class="testimonials__card-role">Founter @democompany</span>
                             </div>
                             <div class="testimonials__card-avatar">
-                                <img src="./images/user-02.webp" alt="Jhon Abraham" />
+                                <img src="./src/images/user-02.webp" alt="Jhon Abraham" />
                             </div>
                         </div>
                         <hr class="testimonials__card-divider">
@@ -1090,7 +1110,7 @@
                 <article class="blog__card">
                     <div class="blog__card-image">
                         <div class="blog__card-image-inner">
-                            <img src="./images/blog1.webp" alt="Exploring MERN Stack">
+                            <img src="./src/images/blog1.webp" alt="Exploring MERN Stack">
                         </div>
                     </div>
                     <div class="blog__card-body">
@@ -1104,7 +1124,7 @@
                 <article class="blog__card">
                     <div class="blog__card-image">
                         <div class="blog__card-image-inner">
-                            <img src="./images/blog2.webp" alt="Best UI components">
+                            <img src="./src/images/blog2.webp" alt="Best UI components">
                         </div>
                     </div>
                     <div class="blog__card-body">
@@ -1118,7 +1138,7 @@
                 <article class="blog__card">
                     <div class="blog__card-image">
                         <div class="blog__card-image-inner">
-                            <img src="./images/blog3_1.webp" alt="The Power of UI/UX">
+                            <img src="./src/images/blog3_1.webp" alt="The Power of UI/UX">
                         </div>
                     </div>
                     <div class="blog__card-body">
@@ -1238,8 +1258,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./js/preline.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./src/js/preline.js"></script>
+    <script src="./src/js/main.js"></script>
 </body>
 
 </html>
