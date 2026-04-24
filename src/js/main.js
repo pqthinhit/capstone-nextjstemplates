@@ -1,3 +1,19 @@
+// Header Sticky Scroll (từ main)
+function initHeaderScroll() {
+    const header = document.getElementById('main-header');
+    if (!header) return;
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 20) {
+            header.classList.add('bg-white', 'dark:bg-neutral-900', 'shadow-sm', 'dark:shadow-neutral-800/50', 'py-4');
+            header.classList.remove('bg-transparent', 'py-7');
+        } else {
+            header.classList.remove('bg-white', 'dark:bg-neutral-900', 'shadow-sm', 'dark:shadow-neutral-800/50', 'py-4');
+            header.classList.add('bg-transparent', 'py-7');
+        }
+    });
+}
+
 // FAQ Accordion Toggle
 function toggleFaq(button) {
     const faqItem = button.parentElement;
@@ -77,6 +93,7 @@ function initScrollAnimations() {
 
 // Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
+    initHeaderScroll();
     initTestimonialsSlider();
     initScrollTop();
     initScrollAnimations();
