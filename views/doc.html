@@ -112,7 +112,7 @@
                             </svg>
                         </button>
 
-                        <button aria-label="theme toggler"
+                        <button data-theme-toggle aria-label="theme toggler"
                             class="absolute right-[68px] xl:static flex cursor-pointer items-center justify-center rounded-full bg-transparent p-[9px] text-black dark:text-white">
                             <img alt="moon" loading="lazy" width="21" height="21" class="dark:hidden"
                                 src="../public/icon/icon-moon.svg">
@@ -211,7 +211,8 @@
                 <!-- Brand Column -->
                 <div class="footer__brand">
                     <a href="#" class="footer__logo">
-                        <img src="../public/logo/logo-light.svg" alt="Solid Logo" class="footer__logo-img">
+                        <img src="../public/logo/logo-dark.svg" alt="Solid Logo" class="footer__logo-img hidden dark:block">
+                        <img src="../public/logo/logo-light.svg" alt="Solid Logo" class="footer__logo-img dark:hidden">
                         <span class="footer__logo-text">Solid</span>
                     </a>
                     <p class="footer__brand-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
