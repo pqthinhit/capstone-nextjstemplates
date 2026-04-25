@@ -739,7 +739,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: 86px;
-    background: linear-gradient(to bottom, #f0f4ff, #ffffff 42%);
+    background: transparent;
 }
 
 .contact__form-wrapper {
@@ -1590,6 +1590,10 @@
     border-top-color: #2D2F40;
 }
 
+.dark .contact__container {
+    background: transparent;
+}
+
 .dark .signup-free__container,
 .dark .testimonials__card,
 .dark .pricing__card,
@@ -1597,6 +1601,12 @@
 .dark .blog__card {
     background: #262B40;
     border-color: #2D2F40;
+}
+
+.dark .contact__form-wrapper {
+    background: #181d31;
+    border-color: #30364f;
+    box-shadow: 0 24px 70px rgba(3, 7, 18, 0.22);
 }
 
 .dark .blog__card {
@@ -1708,13 +1718,30 @@
     background-color: rgba(0, 107, 255, 0.25);
 }
 
-.dark .signup-free__btn,
-.dark .contact__submit-btn {
+.dark .signup-free__btn {
     background-color: #ffffff;
     color: #181C31;
 }
 
-.dark .signup-free__btn:hover,
-.dark .contact__submit-btn:hover {
+.dark .signup-free__btn:hover {
     background-color: #e5e7eb;
+}
+
+.dark .contact__submit-btn {
+    background-color: #2d334d;
+    color: #ffffff;
+}
+
+.dark .contact__submit-btn:hover {
+    background-color: #343b59;
+}
+
+.dark .contact__checkbox {
+    border-color: #3f4864;
+    background-color: #3f4864;
+}
+
+.dark .contact__checkbox:checked {
+    border-color: #006BFF;
+    background-color: #006BFF;
 }

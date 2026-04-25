@@ -1047,25 +1047,29 @@
     </section>
 
     <!-- Form -->
-    <section class="contact dark:bg-none dark:bg-[#1C2136] transition-colors duration-300" id="contact">
+    <section class="contact relative z-10 overflow-hidden dark:bg-none dark:bg-[#1C2136] transition-colors duration-300" id="contact">
+        <div class="absolute inset-0 z-[-1] h-full w-full pointer-events-none">
+            <img alt="Dotted" loading="lazy" class="w-full h-full object-cover dark:hidden" src="./public/shape/shape-dotted-light-02.svg">
+            <img alt="Dotted" loading="lazy" class="hidden w-full h-full object-cover dark:block" src="./public/shape/shape-dotted-dark-02.svg">
+        </div>
         <div class="contact__container anim-fade-top">
-            <div class="contact__form-wrapper dark:bg-[#262B40] dark:border-[#2D2F40]">
+            <div class="contact__form-wrapper dark:bg-[#181C31] dark:border-[#181C31]">
                 <h2 class="contact__form-title dark:text-white">Send a message</h2>
                 <form class="contact__form">
                     <div class="contact__form-grid">
-                        <input type="text" class="contact__input dark:bg-[#262B40] dark:border-[#2D2F40] dark:text-white" placeholder="Full name">
-                        <input type="email" class="contact__input dark:bg-[#262B40] dark:border-[#2D2F40] dark:text-white" placeholder="Email address">
-                        <input type="text" class="contact__input dark:bg-[#262B40] dark:border-[#2D2F40] dark:text-white" placeholder="Subject">
-                        <input type="tel" class="contact__input dark:bg-[#262B40] dark:border-[#2D2F40] dark:text-white" placeholder="Phone number">
+                        <input type="text" class="contact__input dark:bg-transparent dark:border-neutral-700 dark:text-white" placeholder="Full name">
+                        <input type="email" class="contact__input dark:bg-transparent dark:border-neutral-700 dark:text-white" placeholder="Email address">
+                        <input type="text" class="contact__input dark:bg-transparent dark:border-neutral-700 dark:text-white" placeholder="Subject">
+                        <input type="tel" class="contact__input dark:bg-transparent dark:border-neutral-700 dark:text-white" placeholder="Phone number">
                     </div>
-                    <textarea class="contact__textarea dark:bg-[#262B40] dark:border-[#2D2F40] dark:text-white" placeholder="Message" rows="5"></textarea>
+                    <textarea class="contact__textarea dark:bg-transparent dark:border-neutral-700 dark:text-white" placeholder="Message" rows="5"></textarea>
                     <div class="contact__form-footer">
                         <label class="contact__checkbox-label dark:text-gray-400">
                             <input type="checkbox" class="contact__checkbox">
                             <span>By clicking Checkbox, you agree to use our "Form" terms And consent cookie usage in
                                 browser.</span>
                         </label>
-                        <button type="submit" class="contact__submit-btn">
+                        <button type="submit" class="contact__submit-btn dark:bg-[#262B40] dark:hover:bg-neutral-700">
                             Send Message
                             <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
