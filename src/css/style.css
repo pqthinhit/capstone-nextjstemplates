@@ -739,7 +739,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: 86px;
-    background: linear-gradient(to bottom, #f0f4ff, #ffffff 42%);
+    background: transparent;
 }
 
 .contact__form-wrapper {
@@ -1591,7 +1591,7 @@
 }
 
 .dark .contact__container {
-    background: linear-gradient(to bottom, #242a42, #1d2338 42%);
+    background: transparent;
 }
 
 .dark .signup-free__container,
